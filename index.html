@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduación de Luciano Gabino</title>
+    <!-- Fuentes Elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS GENERALES Y PALETA DE COLORES --- */
+        :root {
+            --bg-dark: #0a0a0a;
+            --gold-gradient: linear-gradient(135deg, #b38728 0%, #fbf5b7 25%, #daaa3f 50%, #e9c46a 80%, #b38728 100%);
+            --gold-text: #daaa3f;
+            --white-smoke: rgba(245, 245, 245, 0.9);
+            --blur-white: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--white-smoke);
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            /* Toques blancos difuminados de fondo */
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+        }
+
+        .container {
+            max-width: 500px; /* Optimización estricta para celulares */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, .font-serif {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+
+        .gold-text {
+            background: var(--gold-gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+        }
+
+        /* --- BOTONES ELEGANTES --- */
+        .btn-gold {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: #000;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(218, 170, 63, 0.4);
+        }
+
+        /* --- SECCIONES (TARJETAS MINIMALISTAS) --- */
+        section {
+            background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.05) 100%);
+            border: 1px solid rgba(218, 170, 63, 0.15);
+            border-radius: 8px;
+            padding: 35px 20px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        /* --- HEADER / PORTADA --- */
+        header {
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .icon-cap {
+            width: 60px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 2px 5px rgba(218, 170, 63, 0.5));
+        }
+
+        header h2 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            line-height: 3rem;
+            margin: 15px 0;
+        }
+
+        .line-divider {
+            height: 1px;
+            width: 80px;
+            background: var(--gold-gradient);
+            margin: 20px auto;
+        }
+
+        /* --- CUENTA REGRESIVA --- */
+        .countdown-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            display: block;
+            color: #fff;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #aaa;
+        }
+
+        /* --- GALERÍA DE IMÁGENES --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid rgba(218, 170, 63, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* --- FORMULARIOS --- */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 0.8rem;
+            color: #ccc;
+            display: block;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(218, 170, 63, 0.3);
+            border-radius: 4px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #fbf5b7;
+        }
+
+        /* --- MAPA EMBEBIDO --- */
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+            margin-top: 20px;
+            border-radius: 4px;
+            border: 1px solid rgba(218, 170, 63, 0.2);
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- PORTADA PRINCIPAL -->
+        <header>
+            <!-- Icono decorativo de graduación en SVG dorado -->
+            <svg class="icon-cap" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L1 7L12 12L21 8V14.5M21 8L23 7L12 2Z" stroke="#daaa3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 10.5V16.5C6 18.5 8.7 21 12 21C15.3 21 18 18.5 18 16.5V10.5" stroke="#daaa3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2>MI GRADUACIÓN</h2>
+            <h1 class="gold-text">LUCIANO GABINO</h1>
+            <div class="line-divider"></div>
+            <p style="font-weight: 200; letter-spacing: 1px;">¡Acompáñame a celebrar este gran logro universitario!</p>
+        </header>
+
+        <!-- IMÁGENES DE SENTIDO DE FIESTA -->
+        <section style="padding: 15px;">
+            <div class="gallery">
+                <!-- He colocado imágenes de marcador (placeholder) temáticas de Unsplash que simulan fiesta de graduación refinada -->
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=500" alt="Graduación">
+                <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=500" alt="Fiesta">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=500" alt="Celebración">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=500" alt="Brindis">
+            </div>
+        </section>
+
+        <!-- CUENTA REGRESIVA -->
+        <section>
+            <h3 class="gold-text">FALTAN:</h3>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-label">Seg</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FECHA Y RECEPCIÓN -->
+        <section>
+            <h3 class="gold-text" style="margin-bottom: 10px;">¿CUÁNDO ES?</h3>
+            <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 5px;">SÁBADO</p>
+            <p class="font-serif" style="font-size: 1.5rem; color: #fff; letter-spacing: 1px;">18 DE JULIO DE 2026</p>
+            <div class="line-divider" style="width: 40px; margin: 10px auto;"></div>
+            <p>Recepción: <strong>14:45 HRS</strong></p>
+        </section>
+
+        <!-- UBICACIÓN (MAPA) -->
+        <section>
+            <h3 class="gold-text">LUGAR Y UBICACIÓN</h3>
+            <p style="margin-top: 10px; font-weight: 600;">Salón de Eventos Elegance</p>
+            <p style="font-size: 0.85rem; color: #aaa;">Av. Universidad #123, Ciudad de México</p>
+            
+            <!-- Mapa interactivo real de Google Maps (puedes cambiar este iframe por el del salón real) -->
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.66164920485!2d-99.1887413!3d19.3271794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDE5JzM3LjgiTiA5OcKwMTEnMTkuNSJX!5e0!3m2!1ses!2smx!4v1650000000000!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <!-- Botón dinámico que abre Google Maps directamente en el celular -->
+            <a href="https://maps.google.com/?q=Av.+Universidad+123,+Ciudad+de+Mexico" target="_blank" class="btn-gold">¿CÓMO LLEGAR?</a>
+        </section>
+
+        <!-- CÓDIGO DE VESTIMENTA -->
+        <section>
+            <h3 class="gold-text" style="margin-bottom: 15px;">CÓDIGO DE VESTIMENTA</h3>
+            <p style="font-size: 1.3rem; letter-spacing: 2px; font-weight: 200;">CASUAL</p>
+            <p style="font-size: 0.85rem; color: #aaa; margin-top: 5px;">Hombres: Camisa y pantalón de vestir / Mujeres: Vestido cóctel o traje sastre.</p>
+        </section>
+
+        <!-- SECCIÓN REEMPLAZADA: ALCOHOL Y BEBIDAS -->
+        <section>
+            <h3 class="gold-text" style="margin-bottom: 15px;">ALCOHOL & BEBIDAS</h3>
+            <p style="font-size: 0.9rem; line-height: 1.4rem; color: #ddd;">
+                Contaremos con barra nacional y mezcladores. Si tienes alguna bebida predilecta o especial de tu agrado, ¡eres más que bienvenido a traer tu propia botella para brindar juntos!
+            </p>
+        </section>
+
+        <!-- RSVP / CONFIRMACIÓN INTERACTIVA VÍA WHATSAPP -->
+        <section>
+            <h3 class="gold-text" style="margin-bottom: 20px;">CONFIRMACIÓN DE ASISTENCIA</h3>
+            
+            <div class="form-group">
+                <label for="guest-name">Tu Nombre completo:</label>
+                <input type="text" id="guest-name" placeholder="Ej. Carlos Pérez">
+            </div>
+
+            <div class="form-group">
+                <label for="attendance">¿Asistirás al evento?</label>
+                <select id="attendance">
+                    <option value="Sí, confirmo con gusto">Sí, ahí estaré</option>
+                    <option value="Lamentablemente no podré asistir">No podré asistir</option>
+                </select>
+            </div>
+
+            <!-- Entrada para la sugerencia de canción requerida -->
+            <div class="form-group">
+                <label for="song">Canción que no debe faltar para bailar:</label>
+                <input type="text" id="song" placeholder="Ej. La Chona - Los Tucanes">
+            </div>
+
+            <button type="button" class="btn-gold" onclick="enviarWhatsApp()">CONFIRMAR POR WHATSAPP</button>
+        </section>
+
+        <footer style="margin: 40px 0; font-size: 0.75rem; color: #666; letter-spacing: 1px;">
+            <p>TE ESPERAMOS • LUCIANO GABINO 2026</p>
+        </footer>
+
+    </div>
+
+    <!-- LÓGICA EN JAVASCRIPT (CONEXIONES Y CONTADOR) -->
+    <script>
+        // --- 1. CONFIGURACIÓN DEL CONTADOR EN TIEMPO REAL ---
+        // Fecha objetivo: 18 de Julio de 2026 a las 14:45:00
+        const eventDate = new Date("Jul 18, 2026 14:45:00").getTime();
+
+        const countdownTimer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            // Cálculos de tiempo
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Inserción de datos en el HTML con formato de dos dígitos
+            document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+            // Si la fecha ya pasó
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+
+        // --- 2. LOGICA DE ENVÍO DE DATOS A WHATSAPP ---
+        function enviarWhatsApp() {
+            // Número de teléfono que recibirá las confirmaciones (¡Recuerda cambiar este número por el tuyo!)
+            // Debe incluir código de país sin el signo '+' ni espacios. Ej: 52155XXXXXXXX para México
+            const numeroTelefono = "521234567890"; 
+
+            // Capturar los valores que el invitado escribió
+            const nombre = document.getElementById("guest-name").value.trim();
+            const asistencia = document.getElementById("attendance").value;
+            const cancion = document.getElementById("song").value.trim();
+
+            // Validación simple para asegurar que pongan un nombre
+            if (nombre === "") {
+                alert("Por favor, introduce tu nombre para continuar.");
+                return;
+            }
+
+            // Construir el mensaje de texto formateado para WhatsApp de manera elegante
+            let mensaje = `¡Hola! Te comparto mi respuesta a la invitación de la Graduación de Luciano:%0A%0A`;
+            mensaje += `*Nombre:* ${nombre}%0A`;
+            mensaje += `*Asistencia:* ${asistencia}%0A`;
+            
+            if(cancion !== "") {
+                mensaje += `*Canción sugerida:* ${cancion}%0A`;
+            }
+
+            // Crear la URL de la API de WhatsApp
+            const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${mensaje}`;
+
+            // Abrir la ventana de WhatsApp directamente en el celular o PC del invitado
+            window.open(urlWhatsApp, '_blank');
+        }
+    </script>
+</body>
+</html>
